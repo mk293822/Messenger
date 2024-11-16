@@ -3,8 +3,8 @@
 __pycache__/
 
 # Ignore Django media files
-Messenger/media/*
-media/*
+media/file
+media/images
 
 # Ignore database files
 *.sqlite3
