@@ -1,0 +1,269 @@
+:root {
+    --color-bg-dark: #000000;
+    --color-bg-light: #eaeaea;
+    --color-light-gray: #5e5e5e;
+    --color-gray: #3e3e3e;
+    --color-font: #eeeeee;
+    --color-message: #de459c;
+    --color-success: #5dd693;
+    --color-error: #fc4b0b;
+    --color-active: #2050ca;
+}
+
+/*========== base styles ===========*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-size: inherit;
+}
+
+html {
+    font-size: 56.25%;
+}
+
+@media only screen and (min-width:1200px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+@media only screen and (min-width:2100px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+body {
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--color-font);
+    background-color: var(--color-bg-dark);
+    min-height: 100vh;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    display: inline-block;
+    color: var(--color-font);
+    text-decoration: none;
+}
+
+
+/* ===== header section ===== */
+
+header{
+    position: fixed;
+    background-color: var(--color-bg-dark);
+    width: 100%;
+    margin-bottom: 0;
+}
+
+header > .header {
+    position: relative;
+    display: flex; 
+    justify-content: space-between;
+    padding: 1pc;
+    align-items: center; 
+}
+
+.header>.header__left{
+    display: flex;
+    gap: 1pc;
+}
+
+.header>.header__left>.back{
+    fill: var(--color-message);
+}
+
+.header>.header__left>.round__user {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--color-gray);
+    align-items: center;
+    display: flex;
+}
+
+.header>.header__right{
+    display: flex;
+    gap: 1.5pc;
+}
+
+.header>.header__left>.name__info>small{
+    position: relative;
+    bottom: 5px;
+}
+
+.header>.header__right>.videocall__container>img{
+   position: relative;
+   bottom: 4px;
+}
+
+/* =========  message section ============= */
+
+main {
+    position: relative;
+    width: 100%;
+    top: 4.7pc;
+    padding: 0;
+    /* background-color: linear-gradient(var(--color-active), var(--color-message)); */
+    margin: 0;
+}
+
+main>.container{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    height: 29pc;
+    padding: 1pc;
+}
+
+main .message__topic{
+    position: relative;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+
+.message__topic>img{
+    width: 5pc;
+    height: 5pc;
+}
+
+.message__topic>p{
+    font-size: large;
+    font-weight: 700;
+}
+
+.message{
+    display: flex;
+    gap: .5pc;
+}
+
+.message:last-child{
+    margin-bottom: 1pc;
+}
+
+.message .message__button{
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    text-align: center;
+    word-wrap: break-word;
+    background-color: var(--color-active);
+    color: var(--color-font);
+}
+
+.receive .message__button{
+   min-width: 60px;
+   max-width: 70%;
+   padding: 10px;
+}
+
+.receive>.round__img > img{
+    margin-top: 1pc;
+    width: 2.5pc;
+    height: 2.5pc;
+}
+
+.container .sent {
+    display: flex;
+    justify-content: flex-end;   
+}
+
+.sent .message__button{
+   min-width: 60px;
+   max-width: 70%;
+   padding: 10px;
+}
+
+/* ==== dropdown section ==== */
+
+.dropdown-menu {
+  z-index: 111;
+  position: absolute;
+  top: 5rem;
+  right: 0.5rem;
+  background: var(--color-gray);
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+
+.dropdown-menu form input {
+  padding: 1.2rem 4rem;
+  background-color: var(--color-gray);
+  display: block;
+  color: var(--color-font) !important;
+  font-weight: 500;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+}
+
+.dropdown-menu form input:hover {
+  background-color: var(--color-light-gray);
+}
+
+.dropdown-menu> form > input:not(:last-child) {
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+
+/* ==== footer section ==== */
+
+footer{
+    background-color: var(--color-bg-dark);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+}
+
+footer>.footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: transparent;
+    align-items: center;
+    padding: .5pc;
+}
+
+.footer>.input__form{
+    width: 50pc;
+    margin: 0;
+}
+
+.footer>.input__form>input{
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--color-gray);
+    color: var(--color-font);
+    padding:7px 0 7px 10px;
+    width: 100%;
+}
+
+.like__container{
+    background-color: var(--color-bg-dark);
+    border: none;
+    outline: none;
+}

@@ -1,0 +1,27 @@
+# Ignore Python bytecode
+*.pyc
+__pycache__/
+
+# Ignore Django media files
+Messenger/media/*
+media/*
+
+# Ignore database files
+*.sqlite3
+
+# Ignore Django migrations
+*/migrations/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+
+mindmapping.drawio
