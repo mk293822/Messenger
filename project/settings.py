@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 
 
 # Application definition
@@ -77,27 +77,20 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
+import dj_database_url
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Messenger',
-        'USER': 'Minkhant',
-        'PASSWORD': 'minkhant293822',
-        'HOST': 'localhost',
+        'NAME': 'railway',
+        'USER': 'root',
+        'PASSWORD': 'RtfCcQnVysmpjmPSeTTLWWgTjwwDVhHS',
+        'HOST': 'mysql.railway.internal',
         'PORT': '3306',
-    }
+}
 }
 
-# DATABASES['default'] = dj_database_url.parse("postgresql://messenger_django_user:gvMzwuzpzFmCrK3fh3L9tnEHpP352Its@dpg-cssc7q3tq21c739v3p70-a.singapore-postgres.render.com/messenger_django") 
+DATABASES['default'] = dj_database_url.parse('mysql://root:RtfCcQnVysmpjmPSeTTLWWgTjwwDVhHS@junction.proxy.rlwy.net:46124/railway')
 
 
 # Password validation

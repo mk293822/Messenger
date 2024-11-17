@@ -6,8 +6,8 @@ from django.core.exceptions import ValidationError
 class User_Info(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='images', default='avatar.svg')
-    friends = models.ManyToManyField(User, related_name='friends', blank=True, null=True)
-    request_friend = models.ManyToManyField(User, related_name='friend_request', blank=True, null=True)
+    friends = models.ManyToManyField(User, related_name='friends', blank=True)
+    request_friend = models.ManyToManyField(User, related_name='friend_request', blank=True)
 
     def __str__(self):
         return self.user.username
